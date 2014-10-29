@@ -1,9 +1,11 @@
 # Settings specified here will take precedence over those in config/application.rb
+ActiveSupport::Deprecation.silenced = true 
+
 RedmineApp::Application.configure do
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
   config.cache_classes = true
-	ActiveSupport::Deprecation.silenced = true 
+  ActiveSupport::Deprecation.silenced = true 
   #####
   # Customize the default logger (http://ruby-doc.org/core/classes/Logger.html)
   #
