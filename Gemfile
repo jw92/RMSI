@@ -6,7 +6,6 @@ gem "coderay", "~> 1.0.9"
 gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
 gem "builder", "3.0.0"
 
-ruby '2.0.0'
 group :production do
   gem 'rails_12factor'	#para que heroku se calle
 end	

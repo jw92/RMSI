@@ -9,17 +9,6 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-if Rails.env.production?
-  # silence the deprecation warnings on Heroku
-  # Thanks to: https://gist.github.com/2237443
-  #ActiveSupport::Deprecation.behavior = lambda do |msg, stack|
- #   unless /vendor\/plugins/ =~ msg
-  #    ActiveSupport::Deprecation::DEFAULT_BEHAVIORS[:stderr].call(msg,stack) # whichever handlers you want - this is the default
-  #  end
- # end
-  ActiveSupport::Deprecation.silenced = true 
-end
-
 module RedmineApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -58,8 +47,6 @@ module RedmineApp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-	#just to avoid heroku precompile database problem
-	config.assets.initialize_on_precompile = false
 
     config.action_mailer.perform_deliveries = false
 
