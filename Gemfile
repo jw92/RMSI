@@ -5,7 +5,7 @@ gem "jquery-rails", "~> 2.0.2"
 gem "coderay", "~> 1.0.9"
 gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
 gem "builder", "3.0.0"
-gem "pg", "0.11.0"
+
 ruby '2.0.0'
 
 group :production do
@@ -60,8 +60,8 @@ if File.exist?(database_file)
         gem "pg", ">= 0.11.0", :platforms => [:mri, :mingw]
         gem "activerecord-jdbcpostgresql-adapter", :platforms => :jruby
       when /sqlite3/
-        #gem "sqlite3", :platforms => [:mri, :mingw]
-        #gem "activerecord-jdbcsqlite3-adapter", :platforms => :jruby
+        gem "sqlite3", :platforms => [:mri, :mingw]
+        gem "activerecord-jdbcsqlite3-adapter", :platforms => :jruby
       when /sqlserver/
         gem "tiny_tds", "~> 0.5.1", :platforms => [:mri, :mingw]
         gem "activerecord-sqlserver-adapter", :platforms => [:mri, :mingw]
