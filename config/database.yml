@@ -6,30 +6,30 @@
 production:
   adapter: postgresql
   database: redmine
- # host: localhost
-  encoding: unicode
-  port: 5
-  username: postgres
-  password:	
+  host: localhost
+  encoding: utf8
+  port: 5432
+  username: redmine
+  password:	1234
   #database: production<%= ENV['TEST_ENV_NUMBER'] %>
   #socket: /var/run/mysqld/mysqld.sock
 
 development:
   adapter: postgresql
-#  host: localhost
-  encoding: unicode
-  pool: 5
-  username: postgres
-  password: 
+  host: localhost
+  encoding: utf8
+  pool: 5432
+  username: redmine
+  password: 1234
   database: redmine
   #socket: /var/run/mysqld/mysqld.sock
 test:
   adapter: postgresql
- # host: localhost
-  encoding: unicode
-  pool: 5
-  username: postgres
-  password: 
+  host: localhost
+  encoding: utf8
+  pool: 5432
+  username: redmine
+  password: 1234
   database: redmine
  # socket: /var/run/mysqld/mysqld.sock
 
