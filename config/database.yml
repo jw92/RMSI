@@ -5,31 +5,33 @@
 
 production:
   adapter: postgresql
-  encoding: unicode
-  pool: 5
-  username: lnufplzhmmpdsm
-  password:	2wP6ckKxzi0yfxW_HtB_k-ZJQH
-  host: ec2-54-83-43-49.compute-1.amazonaws.com
+  database: redmine
+  host: localhost
+  encoding: utf8
   port: 5432
+  username: redmine
+  password:	1234
   #database: production<%= ENV['TEST_ENV_NUMBER'] %>
   #socket: /var/run/mysqld/mysqld.sock
 
 development:
   adapter: postgresql
-  encoding: unicode
-  pool: 5
-  username: lnufplzhmmpdsm
-  password:	2wP6ckKxzi0yfxW_HtB_k-ZJQH
-  host: ec2-54-83-43-49.compute-1.amazonaws.com
-  port: 5432
+  host: localhost
+  encoding: utf8
+  pool: 5432
+  username: redmine
+  password: 1234
+  database: redmine
+  #socket: /var/run/mysqld/mysqld.sock
 test:
   adapter: postgresql
-  encoding: unicode
-  pool: 5
-  username: lnufplzhmmpdsm
-  password:	2wP6ckKxzi0yfxW_HtB_k-ZJQH
-  host: ec2-54-83-43-49.compute-1.amazonaws.com
-  port: 5432
+  host: localhost
+  encoding: utf8
+  pool: 5432
+  username: redmine
+  password: 1234
+  database: redmine
+ # socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
