@@ -4,34 +4,34 @@
 # Line indentation must be 2 spaces (no tabs).
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   database: redmine
   host: localhost
   encoding: utf8
-  port: 10
-  username: <%= ENV['MYSQL_USER'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  database: development<%= ENV['TEST_ENV_NUMBER'] %>
-  socket: /var/run/mysqld/mysqld.sock
+  port: 5432
+  username: redmine
+  password:	1234
+  #database: production<%= ENV['TEST_ENV_NUMBER'] %>
+  #socket: /var/run/mysqld/mysqld.sock
 
 development:
-  adapter: mysql2
+  adapter: postgresql
   host: localhost
   encoding: utf8
-  pool: 10
-  username: <%= ENV['MYSQL_USER'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  database: development<%= ENV['TEST_ENV_NUMBER'] %>
-  socket: /var/run/mysqld/mysqld.sock
+  pool: 5432
+  username: redmine
+  password: 1234
+  database: redmine
+  #socket: /var/run/mysqld/mysqld.sock
 test:
-  adapter: mysql2
+  adapter: postgresql
   host: localhost
   encoding: utf8
-  pool: 10
-  username: <%= ENV['MYSQL_USER'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  database: test<%= ENV['TEST_ENV_NUMBER'] %>
-  socket: /var/run/mysqld/mysqld.sock
+  pool: 5432
+  username: redmine
+  password: 1234
+  database: redmine
+ # socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
