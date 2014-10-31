@@ -10,6 +10,8 @@ ruby '2.0.0'
 
 group :production do
   gem 'rails_12factor'	#para que heroku se calle
+  gem "pg", ">= 0.11.0", :platforms => [:mri, :mingw]
+  gem "activerecord-jdbcpostgresql-adapter", :platforms => :jruby
 end	
 
 # Optional gem for LDAP authentication
