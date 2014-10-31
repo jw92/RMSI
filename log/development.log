@@ -2490,3 +2490,39 @@ Creating scope :sorted. Overwriting existing method User.sorted.
   [1m[36mSetting Load (0.0ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."name" = 'ui_theme' LIMIT 1[0m
   [1m[35mSetting Load (1.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."name" = 'self_registration' LIMIT 1
 Completed 200 OK in 302ms (Views: 104.0ms | ActiveRecord: 18.0ms)
+Connecting to database specified by database.yml
+OpenIdAuthentication.store is nil. Using in-memory store.
+Creating scope :system. Overwriting existing method Enumeration.system.
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-31 15:50:14 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36m (1.0ms)[0m  [1mSELECT MAX("settings"."updated_on") AS max_id FROM "settings" [0m
+Creating scope :sorted. Overwriting existing method User.sorted.
+  [1m[35mSetting Load (1.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."name" = 'rest_api_enabled' LIMIT 1
+  [1m[36mAnonymousUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('AnonymousUser') LIMIT 1[0m
+  Current user: anonymous
+  [1m[35mSetting Load (1.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."name" = 'login_required' LIMIT 1
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."builtin" = 2 LIMIT 1[0m
+  [1m[35mSQL (3.0ms)[0m  SELECT "news"."id" AS t0_r0, "news"."project_id" AS t0_r1, "news"."title" AS t0_r2, "news"."summary" AS t0_r3, "news"."description" AS t0_r4, "news"."author_id" AS t0_r5, "news"."created_on" AS t0_r6, "news"."comments_count" AS t0_r7, "projects"."id" AS t1_r0, "projects"."name" AS t1_r1, "projects"."description" AS t1_r2, "projects"."homepage" AS t1_r3, "projects"."is_public" AS t1_r4, "projects"."parent_id" AS t1_r5, "projects"."created_on" AS t1_r6, "projects"."updated_on" AS t1_r7, "projects"."identifier" AS t1_r8, "projects"."status" AS t1_r9, "projects"."lft" AS t1_r10, "projects"."rgt" AS t1_r11, "projects"."inherit_members" AS t1_r12, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."hashed_password" AS t2_r2, "users"."firstname" AS t2_r3, "users"."lastname" AS t2_r4, "users"."mail" AS t2_r5, "users"."admin" AS t2_r6, "users"."status" AS t2_r7, "users"."last_login_on" AS t2_r8, "users"."language" AS t2_r9, "users"."auth_source_id" AS t2_r10, "users"."created_on" AS t2_r11, "users"."updated_on" AS t2_r12, "users"."type" AS t2_r13, "users"."identity_url" AS t2_r14, "users"."mail_notification" AS t2_r15, "users"."salt" AS t2_r16 FROM "news" LEFT OUTER JOIN "projects" ON "projects"."id" = "news"."project_id" LEFT OUTER JOIN "users" ON "users"."id" = "news"."author_id" AND "users"."type" IN ('User', 'AnonymousUser') WHERE (((projects.status <> 9 AND projects.id IN (SELECT em.project_id FROM enabled_modules em WHERE em.name='news')) AND (projects.is_public = 't'))) ORDER BY news.created_on DESC LIMIT 5
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."builtin" = 2 LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE (((projects.status <> 9) AND (projects.is_public = 't'))) ORDER BY created_on DESC LIMIT 5
+  [1m[36mSetting Load (1.0ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."name" = 'welcome_text' LIMIT 1[0m
+  [1m[35mSetting Load (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."name" = 'app_title' LIMIT 1
+  Rendered welcome/index.html.erb within layouts/base (51.0ms)
+  [1m[36mSetting Load (0.0ms)[0m  [1mSELECT "settings".* FROM "settings" WHERE "settings"."name" = 'ui_theme' LIMIT 1[0m
+  [1m[35mSetting Load (0.0ms)[0m  SELECT "settings".* FROM "settings" WHERE "settings"."name" = 'self_registration' LIMIT 1
+Completed 200 OK in 314ms (Views: 109.0ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-31 15:50:15 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT MAX("settings"."updated_on") AS max_id FROM "settings" [0m
+  [1m[35mAnonymousUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('AnonymousUser') LIMIT 1
+  Current user: anonymous
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."builtin" = 2 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT "news"."id" AS t0_r0, "news"."project_id" AS t0_r1, "news"."title" AS t0_r2, "news"."summary" AS t0_r3, "news"."description" AS t0_r4, "news"."author_id" AS t0_r5, "news"."created_on" AS t0_r6, "news"."comments_count" AS t0_r7, "projects"."id" AS t1_r0, "projects"."name" AS t1_r1, "projects"."description" AS t1_r2, "projects"."homepage" AS t1_r3, "projects"."is_public" AS t1_r4, "projects"."parent_id" AS t1_r5, "projects"."created_on" AS t1_r6, "projects"."updated_on" AS t1_r7, "projects"."identifier" AS t1_r8, "projects"."status" AS t1_r9, "projects"."lft" AS t1_r10, "projects"."rgt" AS t1_r11, "projects"."inherit_members" AS t1_r12, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."hashed_password" AS t2_r2, "users"."firstname" AS t2_r3, "users"."lastname" AS t2_r4, "users"."mail" AS t2_r5, "users"."admin" AS t2_r6, "users"."status" AS t2_r7, "users"."last_login_on" AS t2_r8, "users"."language" AS t2_r9, "users"."auth_source_id" AS t2_r10, "users"."created_on" AS t2_r11, "users"."updated_on" AS t2_r12, "users"."type" AS t2_r13, "users"."identity_url" AS t2_r14, "users"."mail_notification" AS t2_r15, "users"."salt" AS t2_r16 FROM "news" LEFT OUTER JOIN "projects" ON "projects"."id" = "news"."project_id" LEFT OUTER JOIN "users" ON "users"."id" = "news"."author_id" AND "users"."type" IN ('User', 'AnonymousUser') WHERE (((projects.status <> 9 AND projects.id IN (SELECT em.project_id FROM enabled_modules em WHERE em.name='news')) AND (projects.is_public = 't'))) ORDER BY news.created_on DESC LIMIT 5
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."builtin" = 2 LIMIT 1[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE (((projects.status <> 9) AND (projects.is_public = 't'))) ORDER BY created_on DESC LIMIT 5
+  Rendered welcome/index.html.erb within layouts/base (0.0ms)
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 1.0ms)
