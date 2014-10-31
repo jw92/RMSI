@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-require 'rake/dsl_definition'
 
 gem "rails", "3.2.13"
 gem "jquery-rails", "~> 2.0.2"
@@ -8,11 +7,8 @@ gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
 gem "builder", "3.0.0"
 
 ruby '2.0.0'
-gem "rake", "!= 0.9.0"
 group :production do
   gem 'rails_12factor'	#para que heroku se calle
-  gem "pg", ">= 0.11.0", :platforms => [:mri, :mingw]
-  gem "activerecord-jdbcpostgresql-adapter", :platforms => :jruby
 end	
 
 # Optional gem for LDAP authentication
