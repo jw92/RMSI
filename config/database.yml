@@ -9,7 +9,7 @@ production:
  # host: localhost
   encoding: unicode
   port: 5
-  username: redmine
+  username: postgres
   password:	
   #database: production<%= ENV['TEST_ENV_NUMBER'] %>
   #socket: /var/run/mysqld/mysqld.sock
@@ -19,7 +19,7 @@ development:
 #  host: localhost
   encoding: unicode
   pool: 5
-  username: redmine
+  username: postgres
   password: 
   database: redmine
   #socket: /var/run/mysqld/mysqld.sock
@@ -28,7 +28,7 @@ test:
  # host: localhost
   encoding: unicode
   pool: 5
-  username: redmine
+  username: postgres
   password: 
   database: redmine
  # socket: /var/run/mysqld/mysqld.sock
