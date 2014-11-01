@@ -1,0 +1,6 @@
+[submodule "public/ppr"]
+	path = public/ppr
+	url = https://github.com/clsk/ppr.git
+[submodule "plugins/ppr"]
+	path = plugins/ppr
+	url = https://github.com/clsk/ppr.git
